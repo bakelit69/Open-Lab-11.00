@@ -1,112 +1,34 @@
-﻿using System;
+﻿using Open_Lab_10._05;
+using Open_Lab_11._00;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Open_Lab_11._00
+namespace Open_Lab_10._05
 {
-    internal class Book
+    internal class Program
     {
-        private string title;
-        private int pages;
-        private string category;
-        private string author;
-        private int releaseDate;
-
-        /// <summary>
-        /// This List contains book categories
-        /// </summary>
-        public static List<string> categoryList = new List<string>() { "detske", "romantické", "náučné", "sci-fi", "dobrodružné" };
-
-        /// <summary>
-        /// non-parametric constructor
-        /// </summary>
-        public Book()
+        static void Main(string[] args)
         {
-            title = "-1";
-            pages = -1;
-            category = "-1";
-            author = "-1";
-            releaseDate = -1;
-        }
+            Book LOTR = new Book();
+            /*LOTR.Title = "Lord Of The Rings";
+            LOTR.Pages = 576;
+            LOTR.Category = "Fantasy";
+            LOTR.Author = "J.R.R.Tolkien";
+            LOTR.ReleaseDate = 1954;*/
+            Console.WriteLine(LOTR.ToString());
 
-        /// <summary>
-        /// parametric constructor that sets certain values to Title and Pages
-        /// </summary>
-        public Book(string sTitle, int sPages)
-        {
-            this.title = sTitle;
-            this.pages = sPages;
-            category = "-1";
-            author = "-1";
-            releaseDate = -1;
-        }
+            Book LOTR2 = new Book();
+            Console.WriteLine(LOTR2.ToString());
 
-        /// <summary>
-        /// parametric constructor thats sets every value in Book
-        /// </summary>
-        public Book(string sTitle, int sPages, string sCategory, string sAuthor, int sReleaseDate)
-        {
-            this.title = sTitle;
-            this.pages = sPages;
-            this.category = sCategory;
-            this.author = sAuthor;
-            this.releaseDate = sReleaseDate;
-        }
+            Book LOTR3 = new Book("LOTR3", 576);
+            Console.WriteLine(LOTR3.ToString());
 
-        /// <summary>
-        /// get/set for Title
-        /// </summary>
-        public string Title { get { return title; } set { title = value; } }
+            Book HOBIT = new Book("HOBIT", 492, Book.categoryList[3], "J.R.R.Tolkien", 1954);
 
-        /// <summary>
-        /// get/set for Pages
-        /// </summary>
-        public int Pages
-        {
-            get
-            {
-                return pages;
-            }
-            set
-            {
-                pages = pages = value <= 0 ? 1 : value;
-            }
-        }
-
-        /// <summary>
-        /// get/set for Category
-        /// </summary>
-        public string Category { set { category = value; } }
-
-        /// <summary>
-        /// get/set for Author
-        /// </summary>
-        public string Author { get { return author; } set { author = value; } }
-
-        /// <summary>
-        /// get/set for ReleaseDate
-        /// </summary>
-        public int ReleaseDate
-        {
-            get
-            {
-                return releaseDate;
-
-            }
-            set
-            {
-                releaseDate = releaseDate = value <= 1450 || value >= 2021 ? -1 : value;
-            }
-        }
-
-        /// <summary>
-        /// method that returns customised strings
-        /// </summary>
-        public override string ToString()
-        {
-            return String.Format($"\n{title}\n{pages}\n{category}\n{author}\n{releaseDate}\n");
+            Console.WriteLine(HOBIT.ToString());
         }
     }
 }
