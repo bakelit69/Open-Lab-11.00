@@ -93,7 +93,6 @@ namespace Open_Lab_11._00
             get
             {
                 return releaseDate;
-
             }
             set
             {
