@@ -19,36 +19,14 @@ namespace Open_Lab_11._00
 
             schoolLibrary.StudentsList.Add("John");
             schoolLibrary.StudentsList.Add("Poul");
-            schoolLibrary.BooksList.Add("ucebnica1");
-            schoolLibrary.BooksList.Add("ucebnica2");
-            schoolLibrary.BooksList.Add("ucebnica3");
-            schoolLibrary.BooksList.Add("ucebnica4");
+            schoolLibrary.BooksList.Add(ucebnica1);
+            schoolLibrary.BooksList.Add(ucebnica2);
+            schoolLibrary.BooksList.Add(ucebnica3);
+            schoolLibrary.BooksList.Add(ucebnica4);
             schoolLibrary.NumberOfStudents = 2;
             schoolLibrary.NumberOfBooks = 4;
 
-            Console.WriteLine(ucebnica1.ToString());
-            Console.WriteLine(ucebnica2.ToString());
-            Console.WriteLine(ucebnica3.ToString());
-            Console.WriteLine(ucebnica4.ToString());
-
-            /*LOTR.Title = "Lord Of The Rings";
-            LOTR.Pages = 576;
-            LOTR.Category = "Fantasy";
-            LOTR.Author = "J.R.R.Tolkien";
-            LOTR.ReleaseDate = 1954;*/
-
-            Book LOTR = new Book();           
-            Console.WriteLine(LOTR.ToString());
-
-            Book LOTR2 = new Book();
-            Console.WriteLine(LOTR2.ToString());
-
-            Book LOTR3 = new Book("LOTR3", 576);
-            Console.WriteLine(LOTR3.ToString());
-
-            Book HOBIT = new Book("HOBIT", 492, Book.categoryList[3], "J.R.R.Tolkien", 1954);
-
-            Console.WriteLine(HOBIT.ToString());
+            Console.WriteLine(schoolLibrary.ToString());
         }
     }
 }

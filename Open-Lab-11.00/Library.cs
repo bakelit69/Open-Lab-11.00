@@ -11,7 +11,7 @@ namespace Open_Lab_11._00
     {
         private int numberOfBooks;
         private int numberOfStudents;
-
+        
         private List<string> studentsList = new List<string>();
         public List<string> StudentsList
         {
@@ -19,8 +19,8 @@ namespace Open_Lab_11._00
             set { studentsList = value; }
         }
 
-        private List<string> booksList = new List<string>();
-        public List<string> BooksList
+        private List<Book> booksList = new List<Book>();
+        public List<Book> BooksList
         {
             get { return booksList; }
             set { booksList = value; }
@@ -51,7 +51,19 @@ namespace Open_Lab_11._00
         }
         public override string ToString()
         {
-            return String.Format($"\n{numberOfBooks}\n{NumberOfStudents}\n{booksList}\n{StudentsList}\n");
+            string booksFromList = String.Empty;
+            string studentsFromList = String.Empty;
+
+            foreach (var x in studentsList)
+            {
+                studentsFromList += x + " ";
+            }
+
+            foreach (var x in booksList)
+            {
+                booksFromList += x + " ";
+            }
+            return String.Format($"\n{this.numberOfBooks}\n{this.numberOfStudents}\n{booksFromList}\n{studentsFromList}\n");
         }
     }
 }    
